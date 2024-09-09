@@ -25,6 +25,7 @@ namespace GADE6122DavidTristanPOE
             this.width = width;
             this.height = height;
             tiles = new Tile[width, height];
+            InitialiseTiles();
         }
 
         private Tile CreateTile(TileType tileType, Position position)
