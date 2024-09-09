@@ -9,49 +9,70 @@ namespace GADE6122DavidTristanPOE
     //Q2.4
     internal class Level
     {
-        static string[] Tile = { "Width", "Height" };
 
-        int resultX = Int32.Parse(Tile[0]);
-        int resultY = Int32.Parse(Tile[1]);
-
-        int positionX, positionY;
-
-        public Level(int reslutX, int resultY)
+        public enum TileType
         {
-            this.resultX = positionX;
-            this.resultY = positionY;
-
-            positionX = 0;
-            positionY = 0;
-
-        }
-        enum TileType
-        {
-            EmptyTile,
+            EmptyTile
         }
 
-        private void CreateTile(int TileType, int Position)
-        {
-            Object tile = new Object();
+        private Tile[,] tiles;
+        private int width, height;
 
-            switch (TileType)
+        public Tile[,] Tiles { get {  return tiles; } set { tiles = value; } }
+
+        public Level(int width, int height)
+        {
+            this.width = width;
+            this.height = height;
+            tiles = new Tile[width, height];
+        }
+
+        private Tile CreateTile(TileType tileType, Position position)
+        {
+            Tile tile = null;
+
+            switch (tileType)
             {
-                case int EmptyTile:
+                case TileType.EmptyTile:
+                    tile = new EmptyTile(position);
                     break;
             }
 
-            //int EmpryTile = Tile[];
+            tiles[position.X, position.Y] = tile;
 
-            return;
+            return tile;
         }
 
-        static void InitialiseTiles()
+        private Tile CreateTile(TileType tileType, int x, int y)
         {
-            //?
+            return CreateTile(tileType, new Position(x, y));
         }
+
+        private void InitialiseTiles()
+        {
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    CreateTile(TileType.EmptyTile, x, y);
+                }
+            }
+        }
+
         public override string ToString()
         {
-            return base.ToString();
+            string level = "";
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    level += tiles[x, y];
+                }
+                level += "\n";
+            }
+
+            return level;
         }
     }
 }
