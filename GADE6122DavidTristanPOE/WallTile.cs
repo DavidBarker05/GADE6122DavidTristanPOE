@@ -9,11 +9,11 @@ namespace GADE6122DavidTristanPOE
     //Q3.1
     internal class WallTile : Tile
     {
-        public WallTile(int x, int y) : base(x, y)
+        public WallTile(Position position) : base(position)
         {
         }
 
         //?
-        public override char Display => throw new NotImplementedException();
+        public override char Display => '█';
     }
 }
