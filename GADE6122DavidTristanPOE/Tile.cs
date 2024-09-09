@@ -3,21 +3,18 @@
     //Q2.2
     internal abstract class Tile
     {
-        private int positionType;
-        private int positionX, positionY;
+        private Position position;
 
-        public int PositionX { get { return positionX; } }
+        public int PositionX { get { return position.X; } }
 
-        public int PositionY { get { return positionY; } }
+        public int PositionY { get { return position.Y; } }
 
-        public Tile(int x, int y)
+        public Tile(Position position)
         {
-            this.positionX = PositionX;
-            this.positionY = PositionX;
+            this.position = position;
         }
 
         public abstract char Display { get; }
-
 
     }
 }
