@@ -4,11 +4,11 @@
     internal class EmptyTile : Tile
     {
         public EmptyTile(Position position, string positionType)
-            : base(position.PositionX, position.PositionY)
+            : base(position.X, position.Y)
         {
         }
         public EmptyTile(Position position)
-            : base(position.PositionX, position.PositionY)
+            : base(position.X, position.Y)
         {
 
         }
