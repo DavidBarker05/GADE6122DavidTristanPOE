@@ -3,11 +3,11 @@
     //Q2.2
     internal abstract class Tile
     {
+
         private Position position;
 
-        public int PositionX { get { return position.X; } }
-
-        public int PositionY { get { return position.Y; } }
+        public int X { get { return position.X; } }
+        public int Y { get { return position.Y; } }
 
         public Tile(Position position)
         {
