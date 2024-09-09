@@ -68,7 +68,7 @@ namespace GADE6122DavidTristanPOE
             {
                 for (int x = 0; x < width; x++)
                 {
-                    level += tiles[x, y];
+                    level += tiles[x, y].Display;
                 }
                 level += "\n";
             }
