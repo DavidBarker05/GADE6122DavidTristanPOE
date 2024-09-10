@@ -1,12 +1,12 @@
 ﻿namespace GADE6122DavidTristanPOE
 {
-    //Q2.3
     internal class EmptyTile : Tile
     {
+        // Constructor for EmptyTile object
         public EmptyTile(Position position) : base(position)
         {
         }
 
-        public override char Display => '.';
+        public override char Display => '.'; // The character that represents an EmptyTile
     }
 }
