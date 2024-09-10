@@ -21,23 +21,23 @@ namespace GADE6122DavidTristanPOE
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            Direction direction = Direction.None;
+            GameEngine.Direction direction = GameEngine.Direction.None;
             switch ((char)e.KeyValue)
             {
                 case 'W':
-                    direction = Direction.Up;
+                    direction = GameEngine.Direction.Up;
                     wPressed = true;
                     break;
                 case 'D':
-                    direction = Direction.Right;
+                    direction = GameEngine.Direction.Right;
                     dPressed = true;
                     break;
                 case 'S':
-                    direction = Direction.Down;
+                    direction = GameEngine.Direction.Down;
                     sPressed = true;
                     break;
                 case 'A':
-                    direction = Direction.Left;
+                    direction = GameEngine.Direction.Left;
                     aPressed = true;
                     break;
             }

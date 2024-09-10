@@ -4,6 +4,15 @@ namespace GADE6122DavidTristanPOE
 {
     internal class GameEngine
     {
+        public enum Direction
+        {
+            Up = 0,
+            Right = 1,
+            Down = 2,
+            Left = 3,
+            None = 4
+        }
+
         private Level currentLevel;
         private int levelAmt;
         private Random rnd = new Random();
