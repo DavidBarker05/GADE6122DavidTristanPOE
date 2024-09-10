@@ -7,6 +7,7 @@
 
         public int X { get { return position.X; } }
         public int Y { get { return position.Y; } }
+        public Position Position { get { return position; } set { position = value; } }
 
         public Tile(Position position)
         {

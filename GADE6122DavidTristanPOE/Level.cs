@@ -14,9 +14,9 @@ namespace GADE6122DavidTristanPOE
 
         private Tile[,] tiles;
         private int width, height;
-        private HeroTile hero;
+        private HeroTile heroTile;
 
-        public HeroTile Hero { get { return hero; } }
+        public HeroTile HeroTile { get { return heroTile; } }
 
         public Tile[,] Tiles { get {  return tiles; } set { tiles = value; } }
 
@@ -27,11 +27,11 @@ namespace GADE6122DavidTristanPOE
             tiles = new Tile[width, height];
             InitialiseTiles();
             Position heroPos = GetRandomEmptyPosition();
-            if (heroTile == null) hero = (HeroTile)CreateTile(TileType.HeroTile, heroPos);
+            if (heroTile == null) this.heroTile = (HeroTile)CreateTile(TileType.HeroTile, heroPos);
             else
             {
                 tiles[heroPos.X, heroPos.Y] = heroTile;
-                hero = heroTile;
+                this.heroTile = heroTile;
             }
         }
 
@@ -81,6 +81,13 @@ namespace GADE6122DavidTristanPOE
                 y = r.Next(0, height);
             } while (!(tiles[x, y] is EmptyTile));
             return new Position(x, y);
+        }
+
+        public void SwopTiles(Tile tile1, Tile tile2)
+        {
+            Position _position = tile1.Position;
+            tile1.Position = tile2.Position;
+            tile2.Position = _position;
         }
 
         public override string ToString()
