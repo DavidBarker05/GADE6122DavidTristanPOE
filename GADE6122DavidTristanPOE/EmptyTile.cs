@@ -3,7 +3,6 @@
     //Q2.3
     internal class EmptyTile : Tile
     {
-
         public EmptyTile(Position position) : base(position)
         {
         }

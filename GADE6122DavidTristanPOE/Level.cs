@@ -34,7 +34,6 @@ namespace GADE6122DavidTristanPOE
         private Tile CreateTile(TileType tileType, Position position)
         {
             Tile tile = null;
-
             switch (tileType)
             {
                 case TileType.EmptyTile:
@@ -47,9 +46,7 @@ namespace GADE6122DavidTristanPOE
                     tile = new HeroTile(position);
                     break;
             }
-
             tiles[position.X, position.Y] = tile;
-
             return tile;
         }
 
@@ -85,7 +82,6 @@ namespace GADE6122DavidTristanPOE
         public override string ToString()
         {
             string level = "";
-
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -94,7 +90,6 @@ namespace GADE6122DavidTristanPOE
                 }
                 level += "\n";
             }
-
             return level;
         }
     }
