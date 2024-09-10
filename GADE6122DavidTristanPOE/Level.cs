@@ -27,8 +27,12 @@ namespace GADE6122DavidTristanPOE
             tiles = new Tile[width, height];
             InitialiseTiles();
             Position heroPos = GetRandomEmptyPosition();
-            if (heroTile == null) CreateTile(TileType.HeroTile, heroPos);
-            else tiles[heroPos.X, heroPos.Y] = heroTile;
+            if (heroTile == null) hero = (HeroTile)CreateTile(TileType.HeroTile, heroPos);
+            else
+            {
+                tiles[heroPos.X, heroPos.Y] = heroTile;
+                hero = heroTile;
+            }
         }
 
         private Tile CreateTile(TileType tileType, Position position)
