@@ -14,7 +14,36 @@ namespace GADE6122DavidTristanPOE
         public Form1()
         {
             // Keyboard input
+            /*
+             * We needed to get the moment that a user presses a key
+             * so that we could get user input, Microsoft ([s.a.])
+             * shows how to do this in their API with the
+             * Control.KeyDown Event.
+             * 
+             * In order to do anything when a button is pressed a
+             * method needs to be created that follows the layout
+             * of the KeyEventHandler Delegate which Microsoft
+             * ([s.a.]) shows how to do in their API.
+             * 
+             * NOTE: This is an in-text reference to see reference
+             * list go to README folder.
+             */
             KeyDown += Form1_KeyDown;
+            /*
+             * We needed to get the moment that a user releases a
+             * key so that we could tell when a user has stopped
+             * pressing a key and can now press again, Microsoft
+             * ([s.a.]) shows how to do this in their API with the
+             * Control.KeyUp Event.
+             * 
+             * In order to do anything when a button is released a
+             * method needs to be created that follows the layout
+             * of the KeyEventHandler Delegate which Microsoft
+             * ([s.a.]) shows how to do in their API.
+             * 
+             * NOTE: This is an in-text reference to see reference
+             * list go to README folder.
+             */
             KeyUp += Form1_KeyUp;
             InitializeComponent();
             gameEngine = new GameEngine(10); // Make 10 max levels
