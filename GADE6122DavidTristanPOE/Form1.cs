@@ -74,6 +74,7 @@ namespace GADE6122DavidTristanPOE
         private void UpdateDisplay()
         {
             lblDisplay.Text = gameEngine.ToString();
+            lblLevelNumber.Text = $"LEVEL {gameEngine.CurrentLevelNumber} OF {gameEngine.LevelAmt}";
         }
 
     }

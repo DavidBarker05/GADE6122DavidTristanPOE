@@ -29,6 +29,9 @@ namespace GADE6122DavidTristanPOE
         const int MIN_SIZE = 10;
         const int MAX_SIZE = 20;
 
+        public int LevelAmt { get { return levelAmt; } }
+        public int CurrentLevelNumber { get { return currentLevelNumber; } }
+
         public GameEngine(int levelAmt)
         {
             this.levelAmt = levelAmt;
