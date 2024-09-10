@@ -33,6 +33,7 @@ namespace GADE6122DavidTristanPOE
                 tiles[heroPos.X, heroPos.Y] = heroTile;
                 this.heroTile = heroTile;
             }
+            this.heroTile.UpdateVision(this);
         }
 
         private Tile CreateTile(TileType tileType, Position position)
