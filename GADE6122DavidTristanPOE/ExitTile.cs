@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GADE6122DavidTristanPOE
+﻿namespace GADE6122DavidTristanPOE
 {
     internal class ExitTile : Tile
     {
@@ -12,6 +6,6 @@ namespace GADE6122DavidTristanPOE
         {
         }
 
-        public override char Display => throw new NotImplementedException();
+        public override char Display => '▒';
     }
 }

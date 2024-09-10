@@ -16,10 +16,11 @@ namespace GADE6122DavidTristanPOE
         private Tile[,] tiles;
         private int width, height;
         private HeroTile heroTile;
+        private ExitTile exitTile;
 
         public HeroTile HeroTile { get { return heroTile; } }
-
-        public Tile[,] Tiles { get {  return tiles; } set { tiles = value; } }
+        public ExitTile ExitTile { get { return exitTile; } }
+        public Tile[,] Tiles { get {  return tiles; }}
 
         public Level(int width, int height, HeroTile heroTile = null)
         {
@@ -35,6 +36,8 @@ namespace GADE6122DavidTristanPOE
                 this.heroTile = heroTile;
             }
             this.heroTile.UpdateVision(this);
+            Position exitPos = GetRandomEmptyPosition();
+            exitTile = (ExitTile)CreateTile(TileType.ExitTile, exitPos);
         }
 
         private Tile CreateTile(TileType tileType, Position position)
