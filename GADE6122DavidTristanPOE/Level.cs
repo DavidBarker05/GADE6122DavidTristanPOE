@@ -85,8 +85,11 @@ namespace GADE6122DavidTristanPOE
 
         public void SwopTiles(Tile tile1, Tile tile2)
         {
+            Tile _tile = tiles[tile1.X, tile1.Y];
             Position _position = tile1.Position;
+            tiles[tile1.X, tile1.Y] = tiles[tile2.X, tile2.Y];
             tile1.Position = tile2.Position;
+            tiles[tile2.X, tile2.Y] = _tile;
             tile2.Position = _position;
         }
 

@@ -5,6 +5,7 @@
         private int hitPoints, maxHitPoints, attackPower;
         private Tile[] vision;
 
+        public Tile[] Vision { get { return vision; } }
         public bool IsDead { get { return hitPoints == 0; } }
 
         public CharacterTile(Position position, int hitPoints, int attackPower) : base(position)

@@ -19,6 +19,27 @@ namespace GADE6122DavidTristanPOE
             currentLevel = new Level(width, height);
         }
 
+        private bool MoveHero(Direction direction)
+        {
+            HeroTile heroTile = currentLevel.HeroTile;
+            bool success = false;
+            if ((int)direction < 4)
+            {
+                success = heroTile.Vision[(int)direction] is EmptyTile;
+                if (success)
+                {
+                    currentLevel.SwopTiles(heroTile, heroTile.Vision[(int)direction]);
+                    heroTile.UpdateVision(currentLevel);
+                }
+            }
+            return success;
+        }
+
+        public void TriggerMovement(Direction direction)
+        {
+            MoveHero(direction);
+        }
+
         public override string ToString()
         {
             return currentLevel.ToString();
