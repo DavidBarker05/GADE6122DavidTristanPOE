@@ -2,7 +2,6 @@
 {
     internal abstract class CharacterTile : Tile
     {
-
         private int hitPoints, maxHitPoints, attackPower;
         private Tile[] vision;
 
@@ -34,6 +33,5 @@
         {
             characterTile.TakeDamage(attackPower);
         }
-
     }
 }

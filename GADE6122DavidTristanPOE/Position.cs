@@ -4,7 +4,6 @@
     //Class Position created for storing x and y coordinates for a singular tile on the map 
     internal class Position
     {
-
         private int x, y;
 
         //properties for x and y coordinates allowing access and modification of backing fields 
@@ -17,6 +16,5 @@
             this.x = x;
             this.y = y;
         }
-
     }
 }

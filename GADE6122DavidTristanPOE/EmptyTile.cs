@@ -9,6 +9,5 @@
         }
 
         public override char Display => '.';
-
     }
 }

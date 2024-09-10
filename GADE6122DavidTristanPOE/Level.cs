@@ -9,7 +9,6 @@ namespace GADE6122DavidTristanPOE
     //Q2.4
     internal class Level
     {
-
         public enum TileType
         {
             EmptyTile,

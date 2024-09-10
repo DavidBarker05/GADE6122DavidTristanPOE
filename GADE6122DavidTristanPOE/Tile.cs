@@ -3,7 +3,6 @@
     //Q2.2
     internal abstract class Tile
     {
-
         private Position position;
 
         public int X { get { return position.X; } }
@@ -15,6 +14,5 @@
         }
 
         public abstract char Display { get; }
-
     }
 }
