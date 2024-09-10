@@ -32,6 +32,7 @@ namespace GADE6122DavidTristanPOE
             if (heroTile == null) this.heroTile = (HeroTile)CreateTile(TileType.HeroTile, heroPos);
             else
             {
+                heroTile.Position = heroPos;
                 tiles[heroPos.X, heroPos.Y] = heroTile;
                 this.heroTile = heroTile;
             }
