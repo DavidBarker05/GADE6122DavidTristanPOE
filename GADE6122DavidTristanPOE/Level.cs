@@ -37,9 +37,9 @@ namespace GADE6122DavidTristanPOE
                 tiles[heroPos.X, heroPos.Y] = heroTile;
                 this.heroTile = heroTile;
             }
-            this.heroTile.UpdateVision(this); // Update hero vision
             Position exitPos = GetRandomEmptyPosition(); // Find free space in level for exit
             exitTile = (ExitTile)CreateTile(TileType.ExitTile, exitPos); // Create and place exit in level
+            this.heroTile.UpdateVision(this); // Update hero vision
         }
 
         // Create new Tile child object based off of the tile's type and position
