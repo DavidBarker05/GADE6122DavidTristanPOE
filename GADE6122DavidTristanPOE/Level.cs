@@ -13,7 +13,7 @@ namespace GADE6122DavidTristanPOE
         public enum TileType
         {
             EmptyTile,
-            Wall
+            WallTile
         }
 
         private Tile[,] tiles;
@@ -38,7 +38,7 @@ namespace GADE6122DavidTristanPOE
                 case TileType.EmptyTile:
                     tile = new EmptyTile(position);
                     break;
-                case TileType.Wall: 
+                case TileType.WallTile: 
                     tile = new WallTile(position);
                     break;
             }
@@ -59,24 +59,9 @@ namespace GADE6122DavidTristanPOE
             {
                 for (int x = 0; x < width; x++)
                 {
-                    CreateTile(TileType.EmptyTile, x, y);
+                    if (y == 0 || x == 0 || y == height - 1 || x == width - 1) CreateTile(TileType.WallTile, x, y);
+                    else CreateTile(TileType.EmptyTile, x, y);
                 }
-            }
-            //Q3.2
-            Position position;
-            for (int y = 0; y < height; y++)
-            {
-                position = new Position(0, y);
-                CreateTile(TileType.Wall, position);
-                position = new Position(width - 1, y);
-                CreateTile(TileType.Wall, position);
-            }
-            for (int x = 0; width > 0; x++)
-            {
-                position = new Position(0, x);
-                CreateTile(TileType.Wall, position);
-                position = new Position(height - 1, x);
-                CreateTile(TileType.Wall, position);
             }
         }
 
