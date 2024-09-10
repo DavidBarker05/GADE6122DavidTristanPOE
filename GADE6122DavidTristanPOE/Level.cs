@@ -9,7 +9,8 @@ namespace GADE6122DavidTristanPOE
         {
             EmptyTile,
             WallTile,
-            HeroTile
+            HeroTile,
+            ExitTile
         }
 
         private Tile[,] tiles;
@@ -49,6 +50,9 @@ namespace GADE6122DavidTristanPOE
                     break;
                 case TileType.HeroTile:
                     tile = new HeroTile(position);
+                    break;
+                case TileType.ExitTile:
+                    tile = new ExitTile(position);
                     break;
             }
             tiles[position.X, position.Y] = tile;
